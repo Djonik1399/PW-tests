@@ -3,6 +3,7 @@ from Locators.personal import Personal
 from pages.base import Base
 from data.assertions import Assertions
 from playwright.sync_api import Page
+import asyncio
 
 
 class PersonalPage(Base):
@@ -25,6 +26,7 @@ class PersonalPage(Base):
         self.click_first_element(Personal.COMMENT_BTN)
 
         last_comment = self.get_text_element_by_index_all_elements(Personal.LAST_POST, Personal.COMMENT_TEXT, -1).inner_text()
+        asyncio.sleep(5)
         self.assertion.check_equals(comment_on_blog, last_comment, "Comments don't equals")
 
 
