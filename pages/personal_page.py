@@ -26,7 +26,7 @@ class PersonalPage(Base):
         self.click_first_element(Personal.COMMENT_BTN)
 
         last_comment = self.get_text_element_by_index_all_elements(Personal.LAST_POST, Personal.COMMENT_TEXT, -1).inner_text()
-        asyncio.sleep(5)
+        self.refresh()
         self.assertion.check_equals(comment_on_blog, last_comment, "Comments don't equals")
 
 
@@ -42,6 +42,7 @@ class PersonalPage(Base):
         element = self.page.query_selector(Personal.TRACK_BTN)
         original_style_button = element.evaluate("el => window.getComputedStyle(el).color", element)
         self.click(Personal.TRACK_BTN)
+
         style_button_after_click = element.evaluate("el => window.getComputedStyle(el).color", element)
         self.assertion.check_not_equal(original_style_button, style_button_after_click, "Style of button don't changed")
 
