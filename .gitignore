@@ -1,0 +1,9 @@
+.pytest_cache
+.idea
+results
+.env
+data__pytest_cache
+data/__pycache__
+__pycache__
+venv
+results

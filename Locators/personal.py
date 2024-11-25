@@ -1,0 +1,10 @@
+class Personal:
+    FOR_AUTHOR = "//div[text()='Об авторе']"
+    BLOG = "//div[text()='Блог']"
+    SUPPORT_BTN = "div.goals-informer__button:has-text('Поддерживать')"
+    TRACK_BTN = ".poster__button-icon.ng-star-inserted"
+    FAVORITES_PROJECTS = "[href='/user/336/favorite-creators']"
+    AREA_FOR_COMMENT = "//textarea[@placeholder='Введите текст комментария']"
+    COMMENT_BTN = "[class='mdc-button__label']"
+    COMMENT_TEXT = "comment p"
+    LAST_POST = ".comment-list__comments-list"
